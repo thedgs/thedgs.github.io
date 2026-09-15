@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Smalling</title>
+<meta name="author" content="David Smalling">
+<meta name="description" content="David Smalling. Artist and researcher at Google DeepMind, based in New York. Research on post-training, reinforcement learning, and inference-time search for reasoning models; paintings and sculpture drawing on Dutch Golden Age traditions.">
+<meta property="og:title" content="David Smalling">
+<meta property="og:description" content="Artist and researcher at Google DeepMind, based in New York. Research on post-training, reinforcement learning, and inference-time search for reasoning models; paintings and sculpture drawing on Dutch Golden Age traditions.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="https://thedgs.github.io/hanami.jpg">
+<meta property="og:image:alt" content="Hanami, 2026. Oil on wood panel by David Smalling.">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEF0EC">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0D1114">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+  :root{
+    --ground:#EEF0EC; --surface:#FAFBF8; --surface-2:#E3E7E1;
+    --ink:#12161B; --ink-2:#39434F; --muted:#6B7682; --rule:#CDD4CB;
+    --accent:#23409B; --accent-soft:rgba(35,64,155,.14);
+    --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+    --f-body:"Spectral",Georgia,"Times New Roman",serif;
+    --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --measure:66ch;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --ground:#0D1114; --surface:#141A20; --surface-2:#1B2229;
+    --ink:#E8ECE6; --ink-2:#C2CAD1; --muted:#8D99A5; --rule:#28323A;
+    --accent:#8FA4FF; --accent-soft:rgba(143,164,255,.18);
+  }}
+  :root[data-theme="dark"]{
+    --ground:#0D1114; --surface:#141A20; --surface-2:#1B2229;
+    --ink:#E8ECE6; --ink-2:#C2CAD1; --muted:#8D99A5; --rule:#28323A;
+    --accent:#8FA4FF; --accent-soft:rgba(143,164,255,.18);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{background:var(--ground);color:var(--ink-2);font-family:var(--f-body);
+    font-size:19px;line-height:1.62;margin:0;padding:0 22px 96px;-webkit-font-smoothing:antialiased;
+    font-variant-numeric:oldstyle-nums proportional-nums}
+  ::selection{background:var(--accent-soft)}
+  .wrap{max-width:var(--measure);margin:0 auto}
+  a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;
+    text-decoration-color:color-mix(in srgb,var(--accent) 45%,transparent);text-underline-offset:3px;
+    transition:text-decoration-color .15s ease}
+  a:hover{text-decoration-color:var(--accent)}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+  /* ---- header ---- */
+  header{padding:64px 0 0}
+  /* Name. This is the research site's essay-title face, exactly.
+     For the serif treatment instead, comment out the two lines marked SANS
+     and uncomment the two marked SERIF. */
+  h1{
+    font-family:var(--f-display);                      /* SANS */
+    font-weight:700;                                   /* SANS */
+    /* font-family:var(--f-body);                         SERIF */
+    /* font-weight:600;                                   SERIF */
+    color:var(--ink);
+    font-size:clamp(29px,5.2vw,42px);
+    line-height:1.08;letter-spacing:-.025em;margin:0 0 14px;text-wrap:balance}
+  .roles{margin:0 0 30px}
+  .roles span,.roles a{display:block;font-family:var(--f-mono);font-size:13px;
+    letter-spacing:.04em;color:var(--ink-2);line-height:1.85;text-decoration:none}
+  .roles a{color:var(--accent);width:fit-content;border-bottom:1px solid var(--rule)}
+  .roles a:hover{border-bottom-color:var(--accent)}
+
+  .lede{color:var(--ink);font-size:clamp(20px,2.4vw,23px);line-height:1.5;margin:0 0 22px;max-width:30em;text-wrap:pretty}
+  .lede a{text-decoration-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+  header p{max-width:58ch}
+
+  /* ---- contact ---- */
+  .links{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 28px}
+  .links li{font-family:var(--f-mono);font-size:13.5px}
+  .links a{text-decoration:none;border-bottom:1px solid var(--rule)}
+  .links a:hover{border-bottom-color:var(--accent)}
+
+  /* ---- section index ---- */
+  .toc{list-style:none;counter-reset:sec;margin:40px 0 0;padding:18px 0 0;border-top:1px solid var(--rule);
+    display:flex;flex-wrap:wrap;gap:8px 26px}
+  .toc li{counter-increment:sec;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .toc li::before{content:counter(sec,decimal-leading-zero);color:var(--muted);margin-right:.7em;font-weight:500}
+  .toc a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s ease,color .15s ease}
+  .toc a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* ---- sections ---- */
+  section{padding:48px 0 0}
+  h2{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    font-weight:500;color:var(--muted);margin:0 0 20px;padding-bottom:9px;
+    border-bottom:1px solid var(--rule)}
+  h3{font-family:var(--f-display);font-weight:600;font-size:17.5px;letter-spacing:-.012em;
+    color:var(--ink);margin:36px 0 12px;line-height:1.3}
+  section > p:first-of-type{color:var(--ink)}
+
+  /* One treatment for every paragraph on the page. */
+  p{margin:0 0 20px;text-wrap:pretty}
+  em{font-style:italic}
+  .brk{border:none;height:1px;background:var(--rule);width:70px;margin:38px 0 36px}
+
+  /* ---- figure ---- */
+  figure{margin:40px auto 44px;max-width:560px}
+  figure img{display:block;width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;background:#0b0b0b;
+    border:1px solid var(--rule);box-shadow:0 18px 44px -24px rgba(0,0,0,.45)}
+  figcaption{text-align:center;margin-top:16px;line-height:1.5}
+  .fig-title{display:block;font-family:var(--f-body);font-style:italic;font-size:16.5px;color:var(--ink)}
+  .fig-title [lang="ja"]{font-style:normal;font-size:.92em}
+  .fig-meta{display:block;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);margin-top:3px}
+
+  /* ---- footer ---- */
+  footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--rule);
+    font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;color:var(--muted);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+  footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
+  footer a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+
+  @media (max-width:520px){
+    body{font-size:18px;padding:0 18px 72px}
+    header{padding-top:48px}
+    section{padding-top:40px}
+    figure{margin:32px auto 36px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation:none!important;transition:none!important}
+  }
+  @media print{
+    @page{margin:16mm}
+    body{background:#fff;color:#000;font-size:10.5pt;line-height:1.45;padding:0}
+    header{padding-top:0} h1{font-size:24pt;color:#000}
+    a{color:#000;text-decoration:none} .brk{background:#999}
+    .toc{display:none}
+    figure{break-inside:avoid;max-width:70mm}
+    figure img{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <!-- Optional portrait, Murphy-style. Drop a file next to index.html and uncomment:
+  <img src="portrait.jpg" alt="David Smalling" style="width:190px;height:auto;margin:0 0 26px;display:block"> -->
+  <h1>David Smalling</h1>
+  <p class="roles"><span>Research Engineer, Google DeepMind</span><a href="https://www.smallingstudio.com/">Artist</a></p>
+
+  <p class="lede">I am an <a href="https://www.templon.com/artists/david-smalling">artist</a> and researcher at <a href="https://deepmind.google/">Google DeepMind</a> based in New York.</p>
+  <p>My research focuses on post-training, reinforcement learning and inference-time search for reasoning models, with applications in mathematics, programming, and computational science. My paintings and sculptures draw on Dutch Golden Age painting traditions to examine how beauty and taste shape intimacy, authority, and belonging.</p>
+  <p>I was born in Kingston, Jamaica, and studied mathematics at Yale, where I also trained in painting at the Yale School of Art. I completed my Ph.D. at Harvard while working in quantitative finance, where I spent roughly a decade before joining DeepMind. Throughout, painting remained a continuous part of that life.</p>
+
+  <ul class="links">
+    <li><a href="mailto:smalling.david@gmail.com">Email</a></li>
+    <li><a href="https://github.com/thedgs">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/david-smalling-9813314">LinkedIn</a></li>
+    <li><a href="https://www.instagram.com/smalling_studio/">Instagram</a></li>
+  </ul>
+
+  <nav aria-label="Sections">
+    <ol class="toc">
+      <li><a href="#science">Science</a></li>
+      <li><a href="#finance">Finance</a></li>
+      <li><a href="#academia">Academia</a></li>
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#thinking">Thinking</a></li>
+    </ol>
+  </nav>
+</header>
+
+<section id="science">
+  <h2>Science and Engineering Career</h2>
+  <p>At DeepMind, my work spans post-training, representation learning, and verification-guided reasoning. Some of my earlier work approached automated research through structured search: candidate programs were executed in a sandbox, scored by task-specific evaluators, and revised in light of the results. These were black-box optimization problems, often with verifiable rewards but sparse feedback and no gradient through program execution. The challenge was to preserve useful variation, balance exploration against exploitation, and allocate computation to the most promising branches of the search.</p>
+
+  <h3>Recent Research</h3>
+  <p>My recent work examines how reinforcement learning can improve performance while preserving a model’s range of useful responses. In <a href="https://arxiv.org/html/2606.03962v2"><em>Using Reward Uncertainty to Induce Diverse Behaviour in Reinforcement Learning</em></a>, we treat uncertainty about the reward function as a reason to retain alternatives. Our framework optimizes a nonlinear objective over sets of responses under a distribution of possible reward functions. One formulation scores each set by its strongest response under each sampled reward function, encouraging useful alternatives when the objectives disagree. In mathematical reasoning tasks, this approach preserved a broader range of response lengths at comparable overall accuracy and improved robustness when training relied on an ensemble of unreliable judges.</p>
+  <p>I have also worked on a system for automated scientific software development, pairing a language model with tree-search to generate, test, and improve candidate programs. Extensions incorporate ideas proposed by research agents, connecting automated literature review and hypothesis generation with empirical testing. In single-cell RNA sequencing, it produced forty methods that outperformed the leading human-developed methods on an external public benchmark. In epidemiological forecasting, fourteen models outperformed the CDC-coordinated hospitalization ensemble over the study’s three-week evaluation period. The work appeared in <a href="https://www.nature.com/articles/s41586-026-10658-6"><em>Nature</em> in 2026</a>, with me among its first-authors.</p>
+  <p>I have studied semantic variability at inference time as well. Additional samples offer diminishing returns when they repeat the same underlying approach. My work uses determinantal point processes to select sets of semantically complementary candidates, improving the probability of finding a correct solution within a fixed sampling budget. Other research has concerned continuous latent-space reasoning. When I first joined Google, I worked on probabilistic modeling with the TensorFlow Probability team.</p>
+</section>
+
+<section id="finance">
+  <h2>Quantitative Hedge Fund Career</h2>
+  <p>My career in quantitative finance began at Ellington Management Group after Yale. I developed systematic macro and equity strategies and the simulation infrastructure used to research and operate them. During my time there, our small team grew from managing $5 million in internal capital to more than $1 billion in external assets. A strategy book I worked on achieved a realized Sharpe ratio of 1.8 over several years, operating at tens of millions in annualized risk.</p>
+  <p>At BlackRock, I became Director and Global Head of Mid-Horizon Research within the $10 billion Fixed Income Global Alpha platform. I led cross-asset systematic research and built the research platform used by teams in San Francisco and London.</p>
+  <p>After BlackRock, I founded a systematic investment firm built around a data-science platform that used LLVM for just-in-time Python compilation. The platform was central to the firm’s acquisition by Marto Capital in 2017. At Marto, I led statistical-learning research for strategies trading over horizons of minutes and built their distributed backtesting system, reducing the runtime of an intraday simulation from ten hours to under fifteen minutes. That change made a substantially wider range of experiments practical.</p>
+</section>
+
+<section id="academia">
+  <h2>Academia</h2>
+  <p>I completed my Ph.D. at Harvard while working full time at Ellington. My <a href="https://dash.harvard.edu/entities/publication/73120379-2c53-6bd4-e053-0100007fdf3b">dissertation</a> focused on how information enters financial prices when attention is limited, evidence is noisy, and knowledge circulates unevenly through social networks. It examined markets as imperfect learning systems, shaped by what investors notice, whom they encounter, and how much confidence they place in new evidence.</p>
+  <p>One essay showed how a stock can become effectively “forgotten” when it represents only a small position for each of its largest owners, leaving its price slow to reflect even salient earnings news. A second, coauthored with <a href="https://www.linkedin.com/in/alexanderchernyakov/">Alexander Chernyakov</a>, traced the social ties linking fund managers and corporate executives, finding that informal contact influenced trading and the circulation of managers’ best ideas. A third developed a Bayesian model in which errors about the precision of incoming evidence produce short-run momentum followed by long-run reversal. Together, the essays described price formation as a process of distributed learning, in which partial knowledge and imperfect judgment can produce persistent patterns in aggregate behavior.</p>
+  <p>During my early academic work, I provided research assistance to <a href="https://www.nobelprize.org/prizes/economic-sciences/2014/tirole/facts/">Jean Tirole</a>, the 2014 Nobel laureate in economics, and E. Glen Weyl on <a href="https://academic.oup.com/qje/article-abstract/127/4/1971/1843692?redirectedFrom=fulltext"><em>Market Power Screens Willingness-to-Pay</em></a>. The project examined how observable market behavior can reveal otherwise hidden information about willingness to pay and the social value of innovation.</p>
+  <p>At Yale, I earned B.S. and M.S. degrees in mathematics. My thesis concerned fast decoding algorithms for partitioned superposition codes, which represent information through sparse combinations of vectors drawn from a structured dictionary. The underlying problem is how to recover individual signals from a shared representation. It has a conceptual parallel in research on feature superposition in neural networks, where many features can occupy the same representational dimensions.</p>
+</section>
+
+<section id="studio">
+  <h2>Art Studio Practice</h2>
+  <p>My studio practice centers on oil painting on wood panel and extends into sculpture. I draw on Mannerist and Dutch Golden Age painting, Jamaican and diasporic histories, and contemporary image culture.</p>
+  <p>I return to Mannerism for the instability within its elegance: elongated bodies, unsettled space, and a virtuosity that can register anxiety. Dutch still life places abundance beside spoilage, appetite beside restraint, and exquisite manufacture beside mortality. In both traditions, the pleasures of the surface carry an awareness of their own fragility. The objects pictured also help establish the terms by which wealth becomes desirable and authoritative.</p>
+  <p>My Jamaican and diasporic background informs how I approach these inherited forms. European pictorial conventions traveled through commerce, empire, religion, and class, acquiring different meanings far from their origins. I am attentive to what those forms authorize, whom they flatter, and what they leave outside the frame. That history enters the work through the use and rearrangement of images as much as through their subject matter.</p>
+  <p>The paintings often concern the conditions of belonging. I am interested in what follows admission to a social world: learning its etiquette, acquiring its fluencies, and becoming conscious of how one is seen. Access can bring pleasure and possibility while also asking for restraint or self-revision. The desire to belong is real, as is the accommodation it can require. Painting allows me to give both their full weight.</p>
+  <p>I take pleasure in the things I paint: the gleam of silver, the depth of a glaze, the light held in a pearl. That attraction is essential to the work. Unease emerges through the arrangement: a constriction, an improbable body, an object displaced from its customary setting. A painting can remain inviting while the relationships within it become less secure.</p>
+  <p>Figures often begin with people from my own life, refracted through historical conventions of portraiture and display. Around them is a recurring company of objects: pearls, snails, beds, ribbons, shells, brass instruments, and silver vessels. Their meanings depend on their circumstances. Pearls can adorn or constrict. A mattress can suggest rest, intimacy, exposure, or aftermath. The snail brings appetite and duration into a polished interior, its ordered shell carried by a soft, vulnerable body. It crosses the composition without observing its etiquette.</p>
+
+  <figure>
+    <img src="hanami.jpg" alt="Hanami: a still life of quilted mattresses stacked on a mirrored black ground, draped in velvet and tied with pink satin ribbons. Strands of pearls wind over the stack, a lit candle stands on a brass holder, a hand mirror rests below, and a bunch of gold balloons carrying snails floats above." loading="lazy" decoding="async">
+    <figcaption>
+      <span class="fig-title">Hanami (<span lang="ja">花見</span>), 2026</span>
+      <span class="fig-meta">Oil on wood panel, 72 × 48 in</span>
+    </figcaption>
+  </figure>
+
+  <p>Reflection complicates these arrangements. Silver, lacquer, glass, and polished wood can widen pictorial space or disclose something unavailable to direct sight. They also make the act of looking part of the subject. In paintings concerned with self-presentation, reflection gives form to the divided experience of inhabiting a scene while imagining how one appears within it.</p>
+  <p>The works combine handwork with contemporary precision fabrication. Panels may be carved, shaped, and inlaid with brass, marble, or contrasting woods before being painted and finished by hand. In some pieces, wood is set into metal, reversing the customary relation between support and ornament.</p>
+  <p>Alongside the studio work, I write essays on painting, connoisseurship, material technique, contemporary culture, and the economic and social life of images and objects. Their subjects range from pentimenti and pigment behavior to pearls, snails, memes, criticism, and the art market. I value the different freedoms of writing and painting: an essay can develop a claim and follow its implications; a painting can sustain meanings that remain unresolved.</p>
+</section>
+
+<section id="thinking">
+  <h2>Thinking and Making</h2>
+  <p>I’m drawn to the old idea that making things and understanding them belong together. Painting and science have given me different ways of pursuing the same pleasure: understanding people, living systems, and the worlds we make—and imagining how they might be otherwise.</p>
+</section>
+
+<footer>
+  <span>© 2026 David Smalling</span>
+  <span>New York</span>
+</footer>
+</div>
+</body>
+</html>
