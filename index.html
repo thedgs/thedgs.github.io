@@ -9,7 +9,7 @@
 <meta property="og:title" content="David Smalling">
 <meta property="og:description" content="Artist and researcher at Google DeepMind, based in New York. Research on post-training, reinforcement learning, and inference-time search for reasoning models; paintings and sculpture drawing on Dutch Golden Age traditions.">
 <meta property="og:type" content="profile">
-<meta property="og:image" content="https://thedgs.github.io/hanami.jpg">
+<meta property="og:image" content="https://thedgs.github.io/hanami-1400.jpg">
 <meta property="og:image:alt" content="Hanami, 2026. Oil on wood panel by David Smalling.">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EEF0EC">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0D1114">
@@ -51,17 +51,16 @@
 
   /* ---- header ---- */
   header{padding:64px 0 0}
-  /* Name. This is the research site's essay-title face, exactly.
-     For the serif treatment instead, comment out the two lines marked SANS
-     and uncomment the two marked SERIF. */
+  /* Name, set in the body serif. For the sans treatment instead, comment out
+     the two lines marked SERIF and uncomment the two marked SANS. */
   h1{
-    font-family:var(--f-display);                      /* SANS */
-    font-weight:700;                                   /* SANS */
-    /* font-family:var(--f-body);                         SERIF */
-    /* font-weight:600;                                   SERIF */
+    font-family:var(--f-body);                         /* SERIF */
+    font-weight:600;                                   /* SERIF */
+    /* font-family:var(--f-display);                      SANS */
+    /* font-weight:700;                                   SANS */
     color:var(--ink);
-    font-size:clamp(29px,5.2vw,42px);
-    line-height:1.08;letter-spacing:-.025em;margin:0 0 14px;text-wrap:balance}
+    font-size:clamp(31px,5.4vw,44px);
+    line-height:1.1;letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance}
   .roles{margin:0 0 30px}
   .roles span,.roles a{display:block;font-family:var(--f-mono);font-size:13px;
     letter-spacing:.04em;color:var(--ink-2);line-height:1.85;text-decoration:none}
@@ -100,9 +99,11 @@
   .brk{border:none;height:1px;background:var(--rule);width:70px;margin:38px 0 36px}
 
   /* ---- figure ---- */
-  figure{margin:40px auto 44px;max-width:560px}
+  figure{width:min(calc(100vw - 44px),760px);max-width:none;margin:44px 0 48px 50%;transform:translateX(-50%)}
+  figure a{display:block;border:0;text-decoration:none}
+  figure a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
   figure img{display:block;width:100%;height:auto;background:#0b0b0b;
-    border:1px solid var(--rule);box-shadow:0 18px 44px -24px rgba(0,0,0,.45)}
+    border:1px solid var(--rule);box-shadow:0 22px 52px -26px rgba(0,0,0,.5)}
   figcaption{text-align:center;margin-top:16px;line-height:1.5}
   .fig-title{display:block;font-family:var(--f-body);font-style:italic;font-size:16.5px;color:var(--ink)}
   .fig-title [lang="ja"]{font-style:normal;font-size:.92em}
@@ -119,7 +120,7 @@
     body{font-size:18px;padding:0 18px 72px}
     header{padding-top:48px}
     section{padding-top:40px}
-    figure{margin:32px auto 36px}
+    figure{margin:32px 0 36px 50%}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -131,7 +132,7 @@
     header{padding-top:0} h1{font-size:24pt;color:#000}
     a{color:#000;text-decoration:none} .brk{background:#999}
     .toc{display:none}
-    figure{break-inside:avoid;max-width:70mm}
+    figure{break-inside:avoid;width:70mm;margin:12mm auto;transform:none}
     figure img{box-shadow:none}
   }
 </style>
@@ -201,7 +202,7 @@
   <p>Figures often begin with people from my own life, refracted through historical conventions of portraiture and display. Around them is a recurring company of objects: pearls, snails, beds, ribbons, shells, brass instruments, and silver vessels. Their meanings depend on their circumstances. Pearls can adorn or constrict. A mattress can suggest rest, intimacy, exposure, or aftermath. The snail brings appetite and duration into a polished interior, its ordered shell carried by a soft, vulnerable body. It crosses the composition without observing its etiquette.</p>
 
   <figure>
-    <img src="hanami.jpg" srcset="hanami-800.jpg 800w, hanami.jpg 1400w" sizes="(max-width: 600px) calc(100vw - 44px), 560px" width="1400" height="2105" alt="Hanami: a still life of quilted mattresses stacked on a mirrored black ground, draped in velvet and tied with pink satin ribbons. Strands of pearls wind over the stack, a lit candle stands on a brass holder, a hand mirror rests below, and a bunch of gold balloons carrying snails floats above." loading="lazy" decoding="async">
+    <a href="hanami.jpg" title="View at full resolution"><img src="hanami.jpg" srcset="hanami-800.jpg 800w, hanami-1400.jpg 1400w, hanami.jpg 2660w" sizes="(max-width: 804px) calc(100vw - 44px), 760px" width="2660" height="4000" alt="Hanami: a still life of quilted mattresses stacked on a mirrored black ground, draped in velvet and tied with pink satin ribbons. Strands of pearls wind over the stack, a lit candle stands on a brass holder, a hand mirror rests below, and a bunch of gold balloons carrying snails floats above." loading="lazy" decoding="async"></a>
     <figcaption>
       <span class="fig-title">Hanami (<span lang="ja">花見</span>), 2026</span>
       <span class="fig-meta">Oil on wood panel, 72 × 48 in</span>
