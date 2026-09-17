@@ -116,6 +116,21 @@
   .fig-title [lang="ja"]{font-family:var(--f-ja);font-style:normal;font-size:.92em}
   .fig-meta{display:block;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.04em;color:var(--muted);margin-top:3px}
 
+  /* ---- interactive figure (ROSA) ---- */
+  .widget-figure{width:auto;max-width:600px;margin:36px auto 40px;transform:none}
+  .widget-figure .widget{border:1px solid var(--rule);border-radius:8px;padding:14px 14px 10px;background:#fff;color:#5b6069}
+  .widget-figure .widget canvas{display:block;width:100%;max-width:100%;min-width:0}
+  .widget-figure .panels{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .widget-figure .widget-bar{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;flex-wrap:wrap;padding:10px 2px 4px}
+  .widget-figure .ctl{font-family:var(--f-mono);font-size:12px;color:#5b6069;display:flex;align-items:center;gap:8px}
+  .widget-figure input[type=range]{accent-color:#d6336c;width:110px}
+  .widget-figure .fineprint{font-family:var(--f-mono);font-size:11.5px;color:#9aa0a8;line-height:1.5}
+  .widget-figure figcaption{text-align:left;margin-top:12px}
+  .widget-figure .fig-title{display:block;font-style:normal;font-weight:600;font-size:15px;color:var(--ink)}
+  .widget-figure .fig-note{display:block;font-size:14px;line-height:1.55;color:var(--muted);margin-top:4px}
+  .widget-figure figcaption a{display:inline;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;color:var(--accent)}
+  .widget-failed .widget-figure{display:none}
+
   /* ---- footer ---- */
   footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--rule);
     font-family:var(--f-mono);font-size:12px;letter-spacing:.04em;color:var(--muted);
@@ -141,6 +156,7 @@
     .toc{display:none}
     figure{break-inside:avoid;width:70mm;margin:12mm auto;transform:none}
     figure img{box-shadow:none}
+    .widget-figure{display:none}
   }
 </style>
 </head>
@@ -155,7 +171,7 @@
     </div>
   </div>
 
-  <p>I’m a researcher at <a href="https://deepmind.google/">Google DeepMind</a> and an <a href="https://www.templon.com/artists/david-smalling">artist</a>. I live and work in New York. My research focuses on post-training, reinforcement learning and inference-time search for reasoning models, with applications in mathematics, programming, and computational science. My paintings and sculptures draw on Dutch Golden Age image-making traditions to examine how beauty and taste shape intimacy, authority, and belonging.</p>
+  <p>I’m a researcher at <a href="https://deepmind.google/">Google DeepMind</a> and an <a href="https://www.templon.com/artists/david-smalling">artist</a>. I live and work in New York. My research focuses on how AI models learn to reason. I work on post-training, reinforcement learning, and inference-time search, with applications in mathematics, programming, and computational science. My paintings and sculptures draw on Mannerism and the Dutch Golden Age to examine how beauty and taste shape intimacy, authority, and belonging.</p>
   <p>I was born in Kingston, Jamaica, and studied mathematics at Yale, where I also trained at the Yale School of Art. I completed my Ph.D. at Harvard while working in quantitative finance, where I subsequently spent roughly a decade before joining DeepMind. Throughout, painting remained a continuous part of that life.</p>
 
   <ul class="links">
@@ -181,6 +197,27 @@
   <p>At DeepMind, my work spans post-training, representation learning, and verification-guided reasoning. Some of my earlier work approached automated research through structured search: candidate programs were executed, scored by task-specific evaluators, and revised in light of the results. These were black-box optimization problems, often with verifiable rewards but sparse feedback and no gradient through program execution. The challenge was to preserve useful variation, balance exploration against exploitation, and allocate computation to the most promising branches of the search.</p>
 
   <p>My <a href="https://im-ant.github.io/rosa/">recent work</a> examines how reinforcement learning can improve performance while preserving a model’s range of useful responses. In <a href="https://arxiv.org/html/2606.03962v2"><em>Using Reward Uncertainty to Induce Diverse Behaviour in Reinforcement Learning</em></a>, we treat uncertainty about the reward function as a reason to retain alternatives. Our framework optimizes a nonlinear objective over sets of responses under a distribution of possible reward functions. One formulation scores each set by its strongest response under each sampled reward function, encouraging useful alternatives when the objectives disagree. In mathematical reasoning tasks, this approach preserved a broader range of response lengths at comparable overall accuracy and improved robustness when training relied on an ensemble of unreliable judges.</p>
+  <figure class="widget-figure">
+    <div class="widget" id="ctrl-widget" data-fig="ctrl">
+      <div class="panels"><canvas></canvas><canvas></canvas></div>
+      <div class="widget-bar">
+        <label class="ctl">
+          <span class="rho-label-a">&rho;(R<sub>1</sub>)=60%</span>
+          <input type="range" class="rho-slider" min="0" max="100" step="1" value="40" aria-label="Relative weight of the two reward functions">
+          <span class="rho-label-b">&rho;(R<sub>2</sub>)=40%</span>
+        </label>
+        <label class="ctl">set size&nbsp;
+          <input type="range" class="n-slider" min="2" max="8" step="1" value="2" aria-label="Set size n">
+          <span class="n-label">n = 2</span>
+        </label>
+        <span class="opt-readout fineprint step-count"></span>
+      </div>
+    </div>
+    <figcaption>
+      <span class="fig-title">Optimization landscape for non-uniformly weighted reward functions</span>
+      <span class="fig-note"><i>R</i><sub>1</sub> rewards +1 for 🍎, <i>R</i><sub>2</sub> rewards +1 for 🍓, and <i>R</i> = 0 for all else. Drag the left slider to change the relative weighting of <i>R</i><sub>1</sub> and <i>R</i><sub>2</sub>. The ROSA+Max optimal policy is controllable through the relative weights, while standard policy gradient converges to a deterministic policy optimal under the higher-weighted reward function. Interactive figure from the <a href="https://im-ant.github.io/rosa/">ROSA project page</a>.</span>
+    </figcaption>
+  </figure>
   <p>I have also worked on a system for automated scientific software development, pairing a language model with tree-search to generate, test, and improve candidate programs. Extensions incorporate ideas proposed by research agents, connecting automated literature review and hypothesis generation with empirical testing. In single-cell RNA sequencing, it produced numerous methods that outperformed the leading human-developed methods on an external public benchmark. In epidemiological forecasting, many of our models outperformed the CDC-coordinated hospitalization ensemble over the study’s three-week evaluation period. The work appeared in <a href="https://www.nature.com/articles/s41586-026-10658-6"><em>Nature</em> in 2026</a>.</p>
   <p>In other recent work, I have studied semantic variability at inference time. Additional samples offer diminishing returns when they repeat the same underlying approach. My work uses determinantal point processes to select sets of semantically complementary candidates, improving the probability of finding a correct solution within a fixed sampling budget. Other research has concerned continuous latent-space reasoning.</p>
 </section>
@@ -230,5 +267,12 @@
   <span>New York</span>
 </footer>
 </div>
+<script defer src="rosa-widgets.js"></script>
+<script>
+window.addEventListener('load',function(){
+  try{var c=document.querySelector('#ctrl-widget canvas');if(!c||!c.width){document.documentElement.classList.add('widget-failed');}}
+  catch(e){document.documentElement.classList.add('widget-failed');}
+});
+</script>
 </body>
 </html>
