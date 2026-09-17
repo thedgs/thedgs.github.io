@@ -62,7 +62,11 @@
     font-size:clamp(31px,5.4vw,44px);
     line-height:1.1;letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance}
   h1 .alt-name{font-weight:400;font-size:.72em;color:var(--ink-2);white-space:nowrap;letter-spacing:0}
-  .roles{margin:0 0 30px;font-family:var(--f-mono);font-size:13px;letter-spacing:.04em;
+  .masthead{display:flex;align-items:stretch;gap:20px;margin:0 0 30px}
+  .masthead-text{min-width:0}
+  .portrait{flex:0 0 auto;align-self:stretch;height:auto;width:auto;aspect-ratio:2/3;object-fit:cover;object-position:50% 25%;
+    border-radius:3px;border:1px solid var(--rule);background:var(--surface-2)}
+  .roles{margin:0;font-family:var(--f-mono);font-size:13px;letter-spacing:.04em;
     color:var(--ink-2);line-height:1.85}
   .roles a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule)}
   .roles a:hover{border-bottom-color:var(--accent)}
@@ -141,10 +145,13 @@
 <body>
 <div class="wrap">
 <header>
-  <!-- Optional portrait, Murphy-style. Drop a file next to index.html and uncomment:
-  <img src="portrait.jpg" alt="David Smalling" style="width:190px;height:auto;margin:0 0 26px;display:block"> -->
-  <h1>David Smalling <span class="alt-name">(<span lang="zh-Hans">石大卫</span>)</span></h1>
-  <p class="roles"><span>Research Engineer, Google DeepMind</span><span class="sep" aria-hidden="true">|</span><a href="https://www.smallingstudio.com/">Artist</a></p>
+  <div class="masthead">
+    <img class="portrait" src="portrait.jpg" srcset="portrait.jpg 400w, portrait-800.jpg 800w" sizes="60px" width="400" height="599" alt="Portrait of David Smalling" decoding="async">
+    <div class="masthead-text">
+      <h1>David Smalling <span class="alt-name">(<span lang="zh-Hans">石大卫</span>)</span></h1>
+      <p class="roles"><span>Research Engineer, Google DeepMind</span><span class="sep" aria-hidden="true">|</span><a href="https://www.smallingstudio.com/">Artist</a></p>
+    </div>
+  </div>
 
   <p class="lede">I am an <a href="https://www.templon.com/artists/david-smalling">artist</a> and researcher at <a href="https://deepmind.google/">Google DeepMind</a> based in New York.</p>
   <p>My research focuses on post-training, reinforcement learning and inference-time search for reasoning models, with applications in mathematics, programming, and computational science. My paintings and sculptures draw on Dutch Golden Age image-making traditions to examine how beauty and taste shape intimacy, authority, and belonging.</p>
