@@ -138,6 +138,10 @@
   footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule)}
   footer a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 
+  /* Below the full text measure, justification opens gaps; fall back to a ragged right edge. */
+  @media (max-width:640px){
+    p{text-align:left}
+  }
   @media (max-width:520px){
     body{font-size:18px;padding:0 18px 72px}
     header{padding-top:48px}
