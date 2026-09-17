@@ -61,11 +61,11 @@
     color:var(--ink);
     font-size:clamp(31px,5.4vw,44px);
     line-height:1.1;letter-spacing:-.01em;margin:0 0 14px;text-wrap:balance}
-  .roles{margin:0 0 30px}
-  .roles span,.roles a{display:block;font-family:var(--f-mono);font-size:13px;
-    letter-spacing:.04em;color:var(--ink-2);line-height:1.85;text-decoration:none}
-  .roles a{color:var(--accent);width:fit-content;border-bottom:1px solid var(--rule)}
+  .roles{margin:0 0 30px;font-family:var(--f-mono);font-size:13px;letter-spacing:.04em;
+    color:var(--ink-2);line-height:1.85}
+  .roles a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule)}
   .roles a:hover{border-bottom-color:var(--accent)}
+  .roles .sep{color:var(--muted);margin:0 .55em}
 
   .lede{color:var(--ink);font-size:clamp(20px,2.4vw,23px);line-height:1.5;margin:0 0 22px;max-width:30em;text-wrap:pretty}
   .lede a{text-decoration-color:color-mix(in srgb,var(--accent) 35%,transparent)}
@@ -143,7 +143,7 @@
   <!-- Optional portrait, Murphy-style. Drop a file next to index.html and uncomment:
   <img src="portrait.jpg" alt="David Smalling" style="width:190px;height:auto;margin:0 0 26px;display:block"> -->
   <h1>David Smalling</h1>
-  <p class="roles"><span>Research Engineer, Google DeepMind</span><a href="https://www.smallingstudio.com/">Artist</a></p>
+  <p class="roles"><span>Research Engineer, Google DeepMind</span><span class="sep" aria-hidden="true">|</span><a href="https://www.smallingstudio.com/">Artist</a></p>
 
   <p class="lede">I am an <a href="https://www.templon.com/artists/david-smalling">artist</a> and researcher at <a href="https://deepmind.google/">Google DeepMind</a> based in New York.</p>
   <p>My research focuses on post-training, reinforcement learning and inference-time search for reasoning models, with applications in mathematics, programming, and computational science. My paintings and sculptures draw on Dutch Golden Age image-making traditions to examine how beauty and taste shape intimacy, authority, and belonging.</p>
@@ -152,6 +152,7 @@
   <ul class="links">
     <li><a href="https://www.linkedin.com/in/david-smalling-9813314">LinkedIn</a></li>
     <li><a href="https://www.instagram.com/smalling_studio/">Instagram</a></li>
+    <li><a href="https://www.templon.com/artists/david-smalling">Contact (via Gallery)</a></li>
   </ul>
 
   <nav aria-label="Sections">
