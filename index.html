@@ -156,7 +156,7 @@
 
   <nav aria-label="Sections">
     <ol class="toc">
-      <li><a href="#science">Science</a></li>
+      <li><a href="#science">Research</a></li>
       <li><a href="#finance">Finance</a></li>
       <li><a href="#academia">Academia</a></li>
       <li><a href="#studio">Studio</a></li>
@@ -166,10 +166,9 @@
 </header>
 
 <section id="science">
-  <h2>Science and Engineering Career</h2>
+  <h2>Recent Research</h2>
   <p>At DeepMind, my work spans post-training, representation learning, and verification-guided reasoning. Some of my earlier work approached automated research through structured search: candidate programs were executed, scored by task-specific evaluators, and revised in light of the results. These were black-box optimization problems, often with verifiable rewards but sparse feedback and no gradient through program execution. The challenge was to preserve useful variation, balance exploration against exploitation, and allocate computation to the most promising branches of the search.</p>
 
-  <h3>Recent Research</h3>
   <p>My recent work examines how reinforcement learning can improve performance while preserving a model’s range of useful responses. In <a href="https://arxiv.org/html/2606.03962v2"><em>Using Reward Uncertainty to Induce Diverse Behaviour in Reinforcement Learning</em></a>, we treat uncertainty about the reward function as a reason to retain alternatives. Our framework optimizes a nonlinear objective over sets of responses under a distribution of possible reward functions. One formulation scores each set by its strongest response under each sampled reward function, encouraging useful alternatives when the objectives disagree. In mathematical reasoning tasks, this approach preserved a broader range of response lengths at comparable overall accuracy and improved robustness when training relied on an ensemble of unreliable judges.</p>
   <p>I have also worked on a system for automated scientific software development, pairing a language model with tree-search to generate, test, and improve candidate programs. Extensions incorporate ideas proposed by research agents, connecting automated literature review and hypothesis generation with empirical testing. In single-cell RNA sequencing, it produced numerous methods that outperformed the leading human-developed methods on an external public benchmark. In epidemiological forecasting, many of our models outperformed the CDC-coordinated hospitalization ensemble over the study’s three-week evaluation period. The work appeared in <a href="https://www.nature.com/articles/s41586-026-10658-6"><em>Nature</em> in 2026</a>, with me among its first-authors.</p>
   <p>In other recent work, I have studied semantic variability at inference time. Additional samples offer diminishing returns when they repeat the same underlying approach. My work uses determinantal point processes to select sets of semantically complementary candidates, improving the probability of finding a correct solution within a fixed sampling budget. Other research has concerned continuous latent-space reasoning.</p>
