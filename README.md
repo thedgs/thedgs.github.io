@@ -4,7 +4,6 @@ A single static page. No build step, no dependencies, no framework.
 
     index.html   the whole site
     deploy.sh    one-command deploy to GitHub Pages
-    CLAUDE.md    instructions for an AI coding agent
 
 ## Deploy
 
