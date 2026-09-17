@@ -77,9 +77,6 @@
   .roles a:hover{border-bottom-color:var(--accent)}
   .roles .sep{color:var(--muted);margin:0 .55em}
 
-  .lede{color:var(--ink);font-size:clamp(20px,2.4vw,23px);line-height:1.5;margin:0 0 22px;max-width:30em;text-wrap:pretty}
-  .lede a{text-decoration-color:color-mix(in srgb,var(--accent) 35%,transparent)}
-  header p{max-width:58ch}
 
   /* ---- contact ---- */
   .links{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 28px}
@@ -104,7 +101,7 @@
     color:var(--ink);margin:36px 0 12px;line-height:1.3}
 
   /* One treatment for every paragraph on the page. */
-  p{margin:0 0 20px;text-wrap:pretty}
+  p{margin:0 0 20px;text-align:justify;hyphens:auto;text-wrap:pretty}
   em{font-style:italic}
   .brk{border:none;height:1px;background:var(--rule);width:70px;margin:38px 0 36px}
 
@@ -158,7 +155,7 @@
     </div>
   </div>
 
-  <p class="lede">I am an <a href="https://www.templon.com/artists/david-smalling">artist</a>, and a researcher at <a href="https://deepmind.google/">Google DeepMind</a>, based in New York.</p>
+  <p>I am a researcher currently at <a href="https://deepmind.google/">Google DeepMind</a>, based in New York.<br>I am an <a href="https://www.templon.com/artists/david-smalling">artist</a>.</p>
   <p>My research focuses on post-training, reinforcement learning and inference-time search for reasoning models, with applications in mathematics, programming, and computational science. My paintings and sculptures draw on Dutch Golden Age image-making traditions to examine how beauty and taste shape intimacy, authority, and belonging.</p>
   <p>I was born in Kingston, Jamaica, and studied mathematics at Yale, where I also trained at the Yale School of Art. I completed my Ph.D. at Harvard while working in quantitative finance, where I subsequently spent roughly a decade before joining DeepMind. Throughout, painting remained a continuous part of that life.</p>
 
@@ -173,7 +170,7 @@
       <li><a href="#science">Research</a></li>
       <li><a href="#finance">Finance</a></li>
       <li><a href="#academia">Academia</a></li>
-      <li><a href="#studio">Studio</a></li>
+      <li><a href="#studio">Art</a></li>
       <li><a href="#thinking">Thinking</a></li>
     </ol>
   </nav>
@@ -206,12 +203,6 @@
 <section id="studio">
   <h2>Art Studio Practice</h2>
   <p>My studio practice centers on oil painting on wood panel and extends into sculpture. I draw on Mannerist and Dutch Golden Age image-making, Jamaican and diasporic histories, and contemporary image culture.</p>
-  <p>I return to Mannerism for the instability within its elegance: elongated bodies, unsettled space, and a virtuosity that can register anxiety. Dutch still life places abundance beside spoilage, appetite beside restraint, and exquisite manufacture beside mortality. In both traditions, the pleasures of the surface carry an awareness of their own fragility. The objects pictured also help establish the terms by which wealth becomes desirable and authoritative.</p>
-  <p>My Jamaican and diasporic background informs how I approach these inherited forms. European pictorial conventions traveled through commerce, empire, religion, and class, acquiring different meanings far from their origins. I am attentive to what those forms authorize, whom they flatter, and what they leave outside the frame. That history enters the work through the use and rearrangement of images as much as through their subject matter.</p>
-  <p>The paintings often concern the conditions of belonging. I am interested in what follows admission to a social world: learning its etiquette, acquiring its fluencies, and becoming conscious of how one is seen. Access can bring pleasure and possibility while also asking for restraint or self-revision. The desire to belong is real, as is the accommodation it can require. Painting allows me to give both their full weight.</p>
-  <p>The paintings begin in attraction: the gleam of silver, the depth of a glaze, the light held in a pearl. That attraction is essential to the work. Unease emerges through the arrangement: a constriction, an improbable body, an object displaced from its customary setting. A painting can remain inviting while the relationships within it become less secure.</p>
-  <p>Figures often begin with people from my own life, refracted through historical conventions of portraiture and display. Around them is a recurring company of objects: pearls, snails, beds, ribbons, shells, brass instruments, and silver vessels. Their meanings depend on their circumstances. Pearls can adorn or constrict. A mattress can suggest rest, intimacy, exposure, or aftermath. The snail brings appetite and duration into a polished interior, its ordered shell carried by a soft, vulnerable body. It crosses the composition without observing its etiquette.</p>
-
   <figure>
     <a href="hanami.jpg" title="View at full resolution"><img src="hanami.jpg" srcset="hanami-800.jpg 800w, hanami-1400.jpg 1400w, hanami.jpg 2660w" sizes="(max-width: 804px) calc(100vw - 44px), 760px" width="2660" height="4000" alt="Hanami: a still life of quilted mattresses stacked on a mirrored black ground, draped in velvet and tied with pink satin ribbons. Strands of pearls wind over the stack, a lit candle stands on a brass holder, a hand mirror rests below, and a bunch of gold balloons carrying snails floats above." loading="lazy" decoding="async"></a>
     <figcaption>
@@ -219,6 +210,12 @@
       <span class="fig-meta">Oil on wood panel, 72 × 48 in</span>
     </figcaption>
   </figure>
+  <p>I return to Mannerism for the instability within its elegance: elongated bodies, unsettled space, and a virtuosity that can register anxiety. Dutch still life places abundance beside spoilage, appetite beside restraint, and exquisite manufacture beside mortality. In both traditions, the pleasures of the surface carry an awareness of their own fragility. The objects pictured also help establish the terms by which wealth becomes desirable and authoritative.</p>
+  <p>My Jamaican and diasporic background informs how I approach these inherited forms. European pictorial conventions traveled through commerce, empire, religion, and class, acquiring different meanings far from their origins. I am attentive to what those forms authorize, whom they flatter, and what they leave outside the frame. That history enters the work through the use and rearrangement of images as much as through their subject matter.</p>
+  <p>The paintings often concern the conditions of belonging. I am interested in what follows admission to a social world: learning its etiquette, acquiring its fluencies, and becoming conscious of how one is seen. Access can bring pleasure and possibility while also asking for restraint or self-revision. The desire to belong is real, as is the accommodation it can require. Painting allows me to give both their full weight.</p>
+  <p>The paintings begin in attraction: the gleam of silver, the depth of a glaze, the light held in a pearl. That attraction is essential to the work. Unease emerges through the arrangement: a constriction, an improbable body, an object displaced from its customary setting. A painting can remain inviting while the relationships within it become less secure.</p>
+  <p>Figures often begin with people from my own life, refracted through historical conventions of portraiture and display. Around them is a recurring company of objects: pearls, snails, beds, ribbons, shells, brass instruments, and silver vessels. Their meanings depend on their circumstances. Pearls can adorn or constrict. A mattress can suggest rest, intimacy, exposure, or aftermath. The snail brings appetite and duration into a polished interior, its ordered shell carried by a soft, vulnerable body. It crosses the composition without observing its etiquette.</p>
+
 
   <p>Reflection complicates these arrangements. Silver, lacquer, glass, and polished wood can widen pictorial space or disclose something unavailable to direct sight. They also make the act of looking part of the subject. In paintings concerned with self-presentation, reflection gives form to the divided experience of inhabiting a scene while imagining how one appears within it.</p>
   <p>The works combine handwork with contemporary precision fabrication. Panels may be carved, shaped, and inlaid with brass, marble, or contrasting woods before being painted and finished by hand. In some pieces, wood is set into metal, reversing the customary relation between support and ornament.</p>
