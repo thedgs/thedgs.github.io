@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Moved to smallingstudio.com</title>
-<script>
-  // The art site used to live at this domain. Send old links to the same path there.
-  location.replace('https://www.smallingstudio.com' + location.pathname + location.search + location.hash);
-</script>
+<script src="/redirect.js"></script>
 <style>
   body { font: 16px/1.5 Georgia, serif; max-width: 32rem; margin: 20vh auto; padding: 0 16px; color: #1b1f22; background: #eef0ec; }
   a { color: inherit; }

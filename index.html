@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>David Smalling</title>
 <meta name="author" content="David Smalling">
@@ -320,12 +321,7 @@
   <span>New York</span>
 </footer>
 </div>
-<script defer src="rosa-widgets.js"></script>
-<script>
-window.addEventListener('load',function(){
-  try{var c=document.querySelector('#ctrl-widget canvas');if(!c||!c.width){document.documentElement.classList.add('widget-failed');}}
-  catch(e){document.documentElement.classList.add('widget-failed');}
-});
-</script>
+<script defer src="/rosa-widgets.js"></script>
+<script defer src="/widget-fallback.js"></script>
 </body>
 </html>

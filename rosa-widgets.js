@@ -1,6 +1,7 @@
 /* Interactive figure from the ROSA project page, https://im-ant.github.io/rosa/
  * (repository im-ant/rosa, gh-pages branch, static/js/widgets.js). Copied verbatim except
- * for the boot block at the end, which starts only the 'optimization landscape' widget. */
+ * for the boot block at the end, which starts only the 'optimization landscape' widget.
+ * Upstream commit 16660aa3734c3b43c2cb9c62c633d9947fdf2cd2 (branch gh-pages). */
 /* ROSA blog widgets — vanilla JS, no dependencies.
  *
  * Widgets, sharing small numeric utilities:
@@ -1776,7 +1777,11 @@ function initSetFnWidget(id = 'setfn-tr-widget') {
 
 /* ---------- boot ---------- */
 const bootAll = () => {
-  try { initCtrlWidget(); } catch (e) { console.error('ROSA widget failed to start', e); }
+  try {
+    initCtrlWidget();
+    const r = document.getElementById('ctrl-widget');
+    if (r) r.dataset.ready = '1';           // checked by widget-fallback.js
+  } catch (e) { console.error('ROSA widget failed to start', e); }
 };
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', bootAll);
