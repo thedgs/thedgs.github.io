@@ -22,12 +22,15 @@ The name at the top can be set in either face. In the `h1` rule near the top of
 the stylesheet, two lines are marked SANS and two are marked SERIF. Uncomment
 the pair you want and comment out the other.
 
-## Custom domain (deliberately not configured)
+## Custom domain
 
-There is no CNAME file. david-smalling.com currently points at another site.
-When the DNS move is ready: add a `CNAME` file containing `david-smalling.com`,
-set the custom domain under Settings > Pages, and point the apex at GitHub's
-four A records (185.199.108-111.153).
+The site is served at https://david-smalling.com. The `CNAME` file holds the
+domain; don't delete it. DNS lives at Squarespace (the registrar): four A
+records on `@` to 185.199.108-111.153 and `www` as a CNAME to
+`thedgs.github.io`. Canonical URL, structured data, sitemap and robots all use
+https://david-smalling.com/.
+
+The art site is a separate Squarespace site at https://www.smallingstudio.com.
 
 ## Next
 
